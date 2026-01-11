@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="d-flex justify-content-between align-items-center mb-3">
+  <h2 class="mb-0">Visitors (Top by Visits)</h2>
+  <a class="btn btn-primary" href="{{ url_for('web.visitor_new') }}">New Visitor</a>
+</div>
+<p class="text-muted">Tip: when recording a visit/ticket/feedback, you’ll need the Visitor ID.</p>
+<table class="table table-striped">
+  <thead><tr><th>Visitor ID</th><th>Name</th><th>Email</th><th class="text-end">Visits</th></tr></thead>
+  <tbody>
+    {% for row in top_visitors %}
+      <tr><td>{{ row.visitor_id }}</td><td>{{ row.full_name }}</td><td>{{ row.email }}</td><td class="text-end">{{ row.visits }}</td></tr>
+    {% else %}
+      <tr><td colspan="4" class="text-muted">No visit data yet.</td></tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

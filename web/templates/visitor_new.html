@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block content %}
+<h2 class="mb-3">New Visitor</h2>
+<form method="post" class="card shadow-sm p-3">
+  <div class="mb-3">
+    <label class="form-label">Full Name *</label>
+    <input class="form-control" name="full_name" required>
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Email *</label>
+    <input class="form-control" name="email" type="email" required>
+  </div>
+  <div class="row">
+    <div class="col-md-4 mb-3">
+      <label class="form-label">Age Band</label>
+      <input class="form-control" name="age_band" placeholder="18-25">
+    </div>
+    <div class="col-md-4 mb-3">
+      <label class="form-label">Region</label>
+      <input class="form-control" name="region" placeholder="London">
+    </div>
+    <div class="col-md-4 mb-3">
+      <label class="form-label">Membership Type</label>
+      <input class="form-control" name="membership_type" placeholder="standard">
+    </div>
+  </div>
+  <button class="btn btn-primary" type="submit">Create</button>
+</form>
+{% endblock %}

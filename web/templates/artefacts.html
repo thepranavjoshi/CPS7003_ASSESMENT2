@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="d-flex justify-content-between align-items-center mb-3">
+  <h2 class="mb-0">Artefacts</h2>
+  <a class="btn btn-primary" href="{{ url_for('web.artefact_new') }}">New Artefact</a>
+</div>
+<table class="table table-striped">
+  <thead><tr><th>ID</th><th>Name</th><th>Material</th><th>Acquisition</th><th>Last Conservation</th></tr></thead>
+  <tbody>
+    {% for a in artefacts %}
+      <tr>
+        <td>{{ a.artefact_id }}</td>
+        <td>{{ a.name }}</td>
+        <td>{{ a.material }}</td>
+        <td>{{ a.acquisition_date }}</td>
+        <td>{{ a.last_conservation_date }}</td>
+      </tr>
+    {% else %}
+      <tr><td colspan="5" class="text-muted">No artefacts yet.</td></tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}
