@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content %}
+<h2 class="mb-3">New Exhibit</h2>
+<form method="post" class="card shadow-sm p-3">
+  <div class="mb-3">
+    <label class="form-label">Title *</label>
+    <input class="form-control" name="title" required>
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Start Date (YYYY-MM-DD)</label>
+    <input class="form-control" name="start_date">
+  </div>
+  <div class="mb-3">
+    <label class="form-label">End Date (YYYY-MM-DD)</label>
+    <input class="form-control" name="end_date">
+  </div>
+  <button class="btn btn-primary" type="submit">Create</button>
+</form>
+{% endblock %}

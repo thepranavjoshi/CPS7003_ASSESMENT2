@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content %}
+<h2 class="mb-3">Record Visit</h2>
+<form method="post" class="card shadow-sm p-3">
+  <div class="mb-3">
+    <label class="form-label">Visitor ID *</label>
+    <input class="form-control" name="visitor_id" type="number" required>
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Exhibit *</label>
+    <select class="form-select" name="exhibit_id" required>
+      {% for e in exhibits %}
+        <option value="{{ e.exhibit_id }}">{{ e.exhibit_id }} — {{ e.title }}</option>
+      {% endfor %}
+    </select>
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Visit Date (YYYY-MM-DD)</label>
+    <input class="form-control" name="visit_date" placeholder="Leave empty for today">
+  </div>
+  <button class="btn btn-primary" type="submit">Record</button>
+</form>
+{% endblock %}
